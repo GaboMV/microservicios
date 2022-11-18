@@ -33,3 +33,8 @@ spring:
           uri: lb://ms-vehiculos
           predicates:
             - Path=/vehiculo/**
+        - id: ms-usuarios
+          uri: lb://ms-usuarios
+          predicates:
+            - Path=/usuario/**
+            
