@@ -41,3 +41,7 @@ spring:
           uri: lb://ms-estadias
           predicates:
             - Path=/estadia/**
+        - id: ms-registros
+          uri: lb://ms-registros
+          predicates:
+            - Path=/registro/**    
