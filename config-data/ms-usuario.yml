@@ -11,3 +11,29 @@ eureka:
 spring:
   application:
     zipkin: http://localhost:9411
+keycloak:
+  realm: vetstore
+  auth-server-url: http://localhost:8180
+  resource: user
+  credentials:
+    secret: 7BTKRKId9k6zcJrS9syLf5eh4ml5zATU
+  autodetect-bearer-only: true
+  security-constraints:
+    - auth-roles:
+        - ADMIN
+        - USER
+      securityCollections:
+        - name: ENDPOINTS para todos
+          patterns: /usuario/*
+          omitted-methods:
+            - OPTIONS
+    - auth-roles:
+        - ADMIN
+        - USER
+      securityCollections:
+        - name: ENDPOINTS para admin
+          patterns: /usuario
+          omitted-methods:
+            - OPTIONS
+  ssl-required: external
+  use-resource-role-mappings: false
