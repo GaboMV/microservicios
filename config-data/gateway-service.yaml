@@ -12,9 +12,7 @@ eureka:
 
 spring:
   cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8081
+    gateway:
       discovery:
         locator:
           enabled: true
@@ -34,4 +32,4 @@ spring:
         - id: ms-registros
           uri: lb://ms-registros
           predicates:
-            - Path=/registro/**    
+            - Path=/registro/**
