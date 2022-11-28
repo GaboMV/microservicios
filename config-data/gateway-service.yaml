@@ -12,18 +12,18 @@ eureka:
 
 spring:
   cloud:
-    gateway:
-          config:
+    config:
       enabled: true
       uri: http://localhost:8081
+    gateway:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "*"
+            allowedOrigins: "https://docs.spring.io"
             allowedMethods:
-              - GET
-              - POST
-              - PUT
+            - GET
+            - POST
+            - PUT
       discovery:
         locator:
           enabled: true
